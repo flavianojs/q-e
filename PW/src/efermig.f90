@@ -318,7 +318,7 @@ FUNCTION efermig( et, nbnd, nks, nelec, wk, Degauss, Ngauss, is, isk )
           write(unit=9905, fmt=*) x, f(x)
 
           ! Checking if a stationary point was achieved
-          if( abs(x0-x) < abstol .or.abs_num_electrons_minus_nelec(x) < abstol) then
+          if( abs(x0-x) < abstol .or. f(x) < abstol) then
              info = 0
              Nmax = i
              close(9905)
